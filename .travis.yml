@@ -10,3 +10,4 @@ deploy:
   file: dist/test
   on:
     repo: tommyvn/test-cli
+  skip_cleanup: true
