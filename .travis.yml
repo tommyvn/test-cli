@@ -1,9 +1,12 @@
 language: python
-python:
-- '2.7'
-install: pip install pyinstaller
-script: pyinstaller --onefile test.py
-before_deploy: mv dist/test dist/test-${TRAVIS_OS_NAME}
+matrix:
+    include:
+        - os: linux
+          python: 2.7
+        - os: osx
+          language: generic
+install: ./.travis/install.sh
+script: pyinstaller --onefile --name test-${TRAVIS_OS_NAME} test.py
 deploy:
   provider: releases
   api_key:
@@ -12,6 +15,3 @@ deploy:
   on:
     repo: tommyvn/test-cli
   skip_cleanup: true
-os:
-  - linux
-  - osx
