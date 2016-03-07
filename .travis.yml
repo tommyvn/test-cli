@@ -2,3 +2,10 @@ language: python
 python:
 - '2.7'
 install: pip install pyinstaller
+deploy:
+  provider: releases
+  api_key:
+    secure: SiiPs5BdVPuAb3ZY7z52xiShgu0+3m7i3RKrOGq3YivnzkzsJ7cUZ8d4URk/KhQdBsnIuD5O9bQ8evHiEqVMDNO74mNO+AOd2UdsGn3vM8qqDpgg3d2ChPY9hn3NtpTJIuoQfI/OwcIhMccLLx2fAcevmYFiEgr4jD32XlHIWLftGT2Mm/tFkWAi3XCuAUZN4PXthhJzabetIQU5dBISmMtH0cOZsk1hti4OzWVXQQvJgQ2OTi2XF3f8HODOo5Z8fDKidcGKgJJJ6cNuoDubOe5ooJDqQ1BmiNybRopqg4T9bj2vUp31wGK3fvO2N34OAFKn92nyB8Tji0pWKepd3YoKJnCvTBswSht91kc1ui3TUsEDMmH+PM/+jaVL95mKJicL9G5jZ3EcVncD/fmejxc+QCVm/sU0W1FrNU+WgBQ0wfaNgxgE3WwAgWZzXblTKkpX1f5HvEvrkosyK+n/6GA+LWo2wQ2iH9E0IOdyV7Ls5W8aO+NqdF5YqIGtzIqwPI+55lbVGRdb3v0r0/bMZoh6zt/Zz4y1Dx3BGPVZzbOKvUiz8F8oNfhud+14PLDSKO4YeEivT9ZnW1k4LWx08AiqE/4008a8uZa7RduUFgUDgKzJe5qPb3QqSpechTZoPcGKPFdnWtIkdb9DI1zT65W0UDaTKY4XyZJ5+XSFYVY=
+  file: dist/test
+  on:
+    repo: tommyvn/test-cli
